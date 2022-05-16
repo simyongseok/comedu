@@ -5,10 +5,10 @@ var passport = require('../config/passport');
 // Home
 // PWD : domain/admin
 router.get('/', function(req, res){
-  res.render('admin_home/admin_welcome');
+  res.render('admin/admin_welcome');
 });
 router.get('/about', function(req, res){
-  res.render('admin_home/admin_about');
+  res.render('admin/admin_about');
 });
 
 
@@ -16,7 +16,7 @@ router.get('/about', function(req, res){
 router.get('/login', function (req,res) {
   var username = req.flash('username')[0];
   var errors = req.flash('errors')[0] || {};
-  res.render('home/login', {
+  res.render('admin/admin_login', {
     username:username,
     errors:errors
   });

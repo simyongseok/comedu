@@ -46,6 +46,8 @@ app.use('/users', require('./routes/users'));
 app.use('/comments', util.getPostQueryString, require('./routes/comments'));
 app.use('/files', require('./routes/files'));
 app.use('/admin', require('./routes/admin_home'));
+app.use('/admin/users', require('./routes/admin_users'));
+
 
 
 // Port setting
