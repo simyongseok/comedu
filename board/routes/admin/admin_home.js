@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var passport = require('../config/passport');
+var passport = require('../../config/passport');
 
 // Home
 // PWD : domain/admin
