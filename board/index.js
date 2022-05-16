@@ -48,6 +48,7 @@ app.use('/files', require('./routes/files'));
 
 app.use('/admin', require('./routes/admin/admin_home'));
 app.use('/admin/users', require('./routes/admin/admin_users'));
+app.use('/admin/posts', require('./routes/admin/admin_posts'));
 
 
 

@@ -2,11 +2,11 @@ var express  = require('express');
 var router = express.Router();
 var multer = require('multer');
 var upload = multer({ dest: 'uploadedFiles/' });
-var Post = require('../models/Post');
-var User = require('../models/User');
-var Comment = require('../models/Comment');
-var File = require('../models/File');
-var util = require('../util');
+var Post = require('../../models/Post');
+var User = require('../../models/User');
+var Comment = require('../../models/Comment');
+var File = require('../../models/File');
+var util = require('../../util');
 
 // Index
 router.get('/', async function(req, res){
@@ -65,7 +65,7 @@ router.get('/', async function(req, res){
     ]).exec();
   }
 
-  res.render('posts/index', {
+  res.render('admin/posts/admin_index', {
     posts:posts,
     currentPage:page,
     maxPage:maxPage,
