@@ -49,6 +49,15 @@ app.use('/files', require('./routes/files'));
 app.use('/admin', require('./routes/admin/admin_home'));
 app.use('/admin/users', require('./routes/admin/admin_users'));
 app.use('/admin/posts', require('./routes/admin/admin_posts'));
+app.use('/admin/comments', util.getPostQueryString, require('./routes/admin/admin_comments'));
+app.use('/admin/files', require('./routes/admin/admin_files'));
+
+app.use('/class', require('./routes/class/home'));
+app.use('/class/users', require('./routes/class/users'));
+app.use('/class/posts', require('./routes/class/posts'));
+app.use('/class/comments', util.getPostQueryString, require('./routes/class/comments'));
+app.use('/class/files', require('./routes/class/files'));
+
 
 
 
