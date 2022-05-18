@@ -2,7 +2,7 @@ var express  = require('express');
 var router = express.Router();
 var multer = require('multer');
 var upload = multer({ dest: 'uploadedFiles/' });
-var Post = require('../../models/Post');
+var Class = require('../../models/class/Class');
 var User = require('../../models/User');
 var Comment = require('../../models/Comment');
 var File = require('../../models/File');
@@ -21,9 +21,9 @@ router.get('/', async function(req, res){
   var posts = [];
 
   if(searchQuery) {
-    var count = await Post.countDocuments(searchQuery);
+    var count = await Class.countDocuments(searchQuery);
     maxPage = Math.ceil(count/limit);
-    posts = await Post.aggregate([
+    posts = await Class.aggregate([
       { $match: searchQuery },
       { $lookup: {
           from: 'users',
@@ -65,7 +65,7 @@ router.get('/', async function(req, res){
     ]).exec();
   }
 
-  res.render('class/posts/index', {
+  res.render('class/school_B/index', {
     posts:posts,
     currentPage:page,
     maxPage:maxPage,
